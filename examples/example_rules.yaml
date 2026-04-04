@@ -1,0 +1,188 @@
+# Gatekeeper 自定义规则示例
+# 将此文件放在 .gatekeeper/rules/ 目录下即可生效
+
+name: 团队自定义规则
+description: 包含业务特定的代码规范和安全要求
+version: "1.0.0"
+
+rules:
+  # ========== 业务规则 ==========
+  
+  - rule_id: business-payment-001
+    name: 支付接口必须通过封装层调用
+    severity: error
+    category: business
+    description: 直接调用支付网关的接口存在安全风险，必须通过 PaymentService 封装层
+    triggers:
+      - pattern: "(alipay|wechat_pay|stripe|paypal)\\s*\\."
+        language: ["python", "javascript"]
+        context: code
+        file_pattern: ["*.py", "*.js", "*.ts"]
+    cascade_checks:
+      - name: 封装层调用检查
+        description: 检查是否通过 PaymentService 调用
+        validation:
+          must_contain: ["PaymentService", "payment_service", "PaymentClient"]
+        fail_action: block
+    violation_response:
+      block_commit: true
+      message: "【业务违规】检测到直接调用支付接口 ({rule_id})\n"
+               "文件: {file_path}\n"
+               "支付接口必须通过 PaymentService 封装层调用，禁止直接调用第三方支付 SDK"
+      suggested_fix: |
+        # 正确示例
+        from services.payment import PaymentService
+        
+        payment_service = PaymentService()
+        result = payment_service.charge(
+            user_id=user.id,
+            amount=100.00,
+            channel='alipay'
+        )
+      require_approval: "tech-lead"
+    metadata:
+      version: "1.0"
+      author: "payment-team"
+      tags: ["payment", "security", "business"]
+
+  - rule_id: business-audit-001
+    name: 敏感操作必须记录审计日志
+    severity: error
+    category: business
+    description: 涉及资金、权限变更的操作必须记录审计日志
+    triggers:
+      - pattern: "(transfer|withdraw|refund|grant|revoke)\\s*\\("
+        language: ["python", "javascript", "go"]
+        context: code
+        file_pattern: ["*.py", "*.js", "*.ts", "*.go"]
+    cascade_checks:
+      - name: 审计日志检查
+        description: 检查是否调用了审计日志记录
+        validation:
+          must_contain: ["audit_log", "AuditLog", "log_audit", "record_audit"]
+        fail_action: block
+    violation_response:
+      block_commit: true
+      message: "【业务违规】敏感操作缺少审计日志 ({rule_id})\n"
+               "文件: {file_path}\n"
+               "涉及资金、权限变更的操作必须记录审计日志"
+      suggested_fix: |
+        # 正确示例
+        def transfer_money(from_user, to_user, amount):
+            # 执行业务逻辑
+            result = do_transfer(from_user, to_user, amount)
+            
+            # 记录审计日志
+            audit_log.record(
+                action='transfer',
+                operator=current_user.id,
+                target=f"{from_user.id} -> {to_user.id}",
+                amount=amount,
+                result=result
+            )
+            return result
+      require_approval: "security-team"
+    metadata:
+      version: "1.0"
+      author: "audit-team"
+      tags: ["audit", "compliance", "business"]
+
+  # ========== 代码规范规则 ==========
+  
+  - rule_id: style-docstring-001
+    name: 公共函数必须包含文档字符串
+    severity: warning
+    category: style
+    description: 所有公共函数和类必须包含文档字符串说明
+    triggers:
+      - pattern: "^def\\s+[a-zA-Z_][a-zA-Z0-9_]*\\s*\\([^)]*\\)(?!\\s*->)\\s*:"
+        language: ["python"]
+        context: code
+        file_pattern: ["*.py"]
+    cascade_checks:
+      - name: 文档字符串检查
+        description: 检查函数是否包含文档字符串
+        validation:
+          must_contain: ["\"\"\"", "'''"]
+        fail_action: warn
+    violation_response:
+      block_commit: false
+      message: "【规范提示】公共函数缺少文档字符串 ({rule_id})\n"
+               "文件: {file_path}\n"
+               "请为公共函数添加文档字符串，说明函数功能、参数和返回值"
+      suggested_fix: |
+        def my_function(param1, param2):
+            """
+            函数功能说明
+            
+            Args:
+                param1: 参数1说明
+                param2: 参数2说明
+                
+            Returns:
+                返回值说明
+            """
+            pass
+      require_approval: null
+    metadata:
+      version: "1.0"
+      author: "code-quality-team"
+      tags: ["documentation", "style"]
+
+  # ========== 性能规则 ==========
+  
+  - rule_id: performance-loop-001
+    name: 循环中避免重复计算
+    severity: warning
+    category: performance
+    description: 循环中重复计算不变值会影响性能
+    triggers:
+      - pattern: "for\\s+.+\\s+in\\s+.+:\\s*\\n\\s+.+len\\s*\\("
+        language: ["python"]
+        context: code
+        file_pattern: ["*.py"]
+    violation_response:
+      block_commit: false
+      message: "【性能提示】循环中可能存在重复计算 ({rule_id})\n"
+               "文件: {file_path}\n"
+               "建议将循环中不变的计算移到循环外部"
+      suggested_fix: |
+        # 优化前
+        for i in range(len(data)):
+            process(data[i])
+        
+        # 优化后
+        data_length = len(data)
+        for i in range(data_length):
+            process(data[i])
+      require_approval: null
+    metadata:
+      version: "1.0"
+      author: "performance-team"
+      tags: ["performance", "optimization"]
+
+  # ========== AI 生成代码专用规则 ==========
+  
+  - rule_id: ai-hallucination-003
+    name: 检查可能幻觉的导入语句
+    severity: warning
+    category: ai_hallucination
+    description: AI 可能生成不存在的库或模块导入
+    triggers:
+      - pattern: "(from|import)\\s+(AIHelper|SmartAPI|AutoGen|CodeGen)"
+        language: ["python"]
+        context: code
+        file_pattern: ["*.py"]
+    violation_response:
+      block_commit: false
+      message: "【AI 幻觉检查】检测到可能不存在的模块导入 ({rule_id})\n"
+               "文件: {file_path}\n"
+               "匹配内容: {match_content}\n"
+               "请验证该模块是否真实存在！"
+      suggested_fix: null
+      require_approval: null
+    metadata:
+      version: "1.0"
+      author: "ai-team"
+      ai_code_only: true
+      tags: ["ai", "hallucination", "import"]
