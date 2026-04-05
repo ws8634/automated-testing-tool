@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自动化测试分析器</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            display: flex;
+            min-height: 600px;
+        }
+        
+        .sidebar {
+            width: 300px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-right: 1px solid #e9ecef;
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+        
+        .panel {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .panel h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e9ecef;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 10px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+        
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #e9ecef;
+            margin-bottom: 20px;
+        }
+        
+        .tab {
+            padding: 12px 24px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .tab:hover {
+            background: #f8f9fa;
+        }
+        
+        .tab.active {
+            border-bottom-color: #667eea;
+            color: #667eea;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-card h4 {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+        
+        .stat-card p {
+            opacity: 0.9;
+        }
+        
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 13px;
+            line-height: 1.5;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .graph-container {
+            width: 100%;
+            height: 500px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            background: #fafafa;
+            position: relative;
+        }
+        
+        .node {
+            position: absolute;
+            padding: 10px 15px;
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .node:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+        }
+        
+        .node.class {
+            border-color: #e74c3c;
+            background: #fdf2f2;
+        }
+        
+        .node.function {
+            border-color: #3498db;
+            background: #f2f7fd;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .alert {
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+        
+        .alert-error {
+            background: #fdf2f2;
+            color: #e74c3c;
+            border: 1px solid #fecaca;
+        }
+        
+        .alert-success {
+            background: #f2f9f2;
+            color: #28a745;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .file-list {
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+        }
+        
+        .file-item {
+            padding: 10px 15px;
+            border-bottom: 1px solid #e9ecef;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .file-item:hover {
+            background: #f8f9fa;
+        }
+        
+        .file-item:last-child {
+            border-bottom: none;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .modal-header h2 {
+            color: #333;
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        .export-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .export-buttons .btn {
+            width: auto;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 自动化测试分析器</h1>
+            <p>智能扫描 · 深度分析 · 自动生成测试用例</p>
+        </div>
+        
+        <div class="content">
+            <div class="sidebar">
+                <div class="panel">
+                    <h3>📁 项目选择</h3>
+                    <div class="form-group">
+                        <label>项目路径</label>
+                        <input type="text" id="projectPath" placeholder="输入项目路径，如：/path/to/project">
+                    </div>
+                    <button class="btn btn-primary" onclick="scanProject()">扫描项目</button>
+                </div>
+                
+                <div class="panel">
+                    <h3>⚡ 分析操作</h3>
+                    <button class="btn btn-secondary" onclick="staticAnalyze()" id="btnStatic">静态分析</button>
+                    <button class="btn btn-secondary" onclick="dynamicAnalyze()" id="btnDynamic">动态分析</button>
+                    <button class="btn btn-success" onclick="generateTests()" id="btnGenerate">生成测试用例</button>
+                </div>
+                
+                <div class="panel">
+                    <h3>📊 导出报告</h3>
+                    <button class="btn btn-secondary" onclick="exportReport('json')">导出JSON</button>
+                    <button class="btn btn-secondary" onclick="exportReport('markdown')">导出Markdown</button>
+                    <button class="btn btn-secondary" onclick="exportReport('graph')">导出图数据</button>
+                </div>
+            </div>
+            
+            <div class="main-content">
+                <div class="tabs">
+                    <div class="tab active" onclick="switchTab('overview')">概览</div>
+                    <div class="tab" onclick="switchTab('structure')">项目结构</div>
+                    <div class="tab" onclick="switchTab('graph')">调用图</div>
+                    <div class="tab" onclick="switchTab('tests')">测试用例</div>
+                    <div class="tab" onclick="switchTab('report')">分析报告</div>
+                </div>
+                
+                <div id="tab-overview" class="tab-content active">
+                    <div class="panel">
+                        <h3>📈 分析概览</h3>
+                        <div id="overviewContent">
+                            <p style="color: #666; text-align: center; padding: 40px;">
+                                请先选择项目并进行分析
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="tab-structure" class="tab-content">
+                    <div class="panel">
+                        <h3>📂 项目结构</h3>
+                        <div id="structureContent">
+                            <p style="color: #666; text-align: center; padding: 40px;">
+                                请先扫描项目
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="tab-graph" class="tab-content">
+                    <div class="panel">
+                        <h3>🔗 调用关系图</h3>
+                        <div id="graphContent">
+                            <p style="color: #666; text-align: center; padding: 40px;">
+                                请先进行静态分析
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="tab-tests" class="tab-content">
+                    <div class="panel">
+                        <h3>🧪 测试用例</h3>
+                        <div class="form-group">
+                            <label>测试类型</label>
+                            <select id="testType">
+                                <option value="pytest">pytest单元测试</option>
+                                <option value="e2e">端到端测试</option>
+                                <option value="api">API测试</option>
+                                <option value="ui">UI测试</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" onclick="generateTests()">生成测试用例</button>
+                        <div id="testsContent" style="margin-top: 20px;">
+                            <p style="color: #666; text-align: center; padding: 40px;">
+                                点击生成测试用例
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="tab-report" class="tab-content">
+                    <div class="panel">
+                        <h3>📝 分析报告</h3>
+                        <div id="reportContent">
+                            <p style="color: #666; text-align: center; padding: 40px;">
+                                请先进行分析
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">标题</h2>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+    
+    <script>
+        let scanResult = null;
+        let staticResult = null;
+        let dynamicResult = null;
+        let graphData = null;
+        
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById('tab-' + tabName).classList.add('active');
+        }
+        
+        function showLoading(containerId) {
+            document.getElementById(containerId).innerHTML = `
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>正在处理...</p>
+                </div>
+            `;
+        }
+        
+        function showError(containerId, message) {
+            document.getElementById(containerId).innerHTML = `
+                <div class="alert alert-error">${message}</div>
+            `;
+        }
+        
+        function scanProject() {
+            const projectPath = document.getElementById('projectPath').value.trim();
+            if (!projectPath) {
+                alert('请输入项目路径');
+                return;
+            }
+            
+            showLoading('structureContent');
+            
+            fetch('/api/scan', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ project_path: projectPath })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    showError('structureContent', data.error);
+                    return;
+                }
+                
+                scanResult = data;
+                renderStructure(data);
+                renderOverview(data);
+            })
+            .catch(error => {
+                showError('structureContent', '扫描失败: ' + error.message);
+            });
+        }
+        
+        function renderStructure(data) {
+            let html = `<div class="alert alert-success">
+                项目类型: ${data.project_type} | 文件总数: ${data.file_count}
+            </div>`;
+            
+            html += '<div class="file-list">';
+            data.files.slice(0, 100).forEach(file => {
+                html += `<div class="file-item">${file.path} (${file.type})</div>`;
+            });
+            if (data.files.length > 100) {
+                html += `<div class="file-item">... 还有 ${data.files.length - 100} 个文件</div>`;
+            }
+            html += '</div>';
+            
+            document.getElementById('structureContent').innerHTML = html;
+        }
+        
+        function renderOverview(data) {
+            let html = '<div class="stats-grid">';
+            html += `<div class="stat-card"><h4>${data.file_count}</h4><p>文件总数</p></div>`;
+            
+            const filesByType = data.files_by_type || {};
+            for (const [type, count] of Object.entries(filesByType)) {
+                html += `<div class="stat-card"><h4>${count}</h4><p>${type}文件</p></div>`;
+            }
+            
+            html += '</div>';
+            document.getElementById('overviewContent').innerHTML = html;
+        }
+        
+        function staticAnalyze() {
+            const projectPath = document.getElementById('projectPath').value.trim();
+            if (!projectPath) {
+                alert('请先选择项目');
+                return;
+            }
+            
+            showLoading('graphContent');
+            
+            fetch('/api/analyze/static', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ project_path: projectPath })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    showError('graphContent', data.error);
+                    return;
+                }
+                
+                staticResult = data;
+                renderGraph(data);
+                renderOverviewStats(data);
+            })
+            .catch(error => {
+                showError('graphContent', '分析失败: ' + error.message);
+            });
+        }
+        
+        function renderGraph(data) {
+            fetch('/api/report/graph')
+            .then(response => response.json())
+            .then(graph => {
+                graphData = graph;
+                
+                let html = '<div class="graph-container" id="graphContainer">';
+                
+                const nodes = graph.nodes || [];
+                const edges = graph.edges || [];
+                
+                const positions = {};
+                const width = 800;
+                const height = 450;
+                
+                nodes.forEach((node, i) => {
+                    const angle = (2 * Math.PI * i) / nodes.length;
+                    const radius = Math.min(width, height) / 3;
+                    positions[node.id] = {
+                        x: width/2 + radius * Math.cos(angle),
+                        y: height/2 + radius * Math.sin(angle)
+                    };
+                });
+                
+                nodes.forEach(node => {
+                    const pos = positions[node.id] || {x: 100, y: 100};
+                    const typeClass = node.type === 'class' ? 'class' : 'function';
+                    html += `<div class="node ${typeClass}" style="left: ${pos.x}px; top: ${pos.y}px;" onclick="showNodeInfo('${node.id}')">${node.label}</div>`;
+                });
+                
+                html += '</div>';
+                html += '<p style="margin-top: 10px; color: #666;">' + 
+                    '红色节点: 类 | 蓝色节点: 函数 | 节点数: ' + nodes.length + 
+                    ' | 边数: ' + edges.length + '</p>';
+                
+                document.getElementById('graphContent').innerHTML = html;
+            });
+        }
+        
+        function renderOverviewStats(data) {
+            let html = '<div class="stats-grid">';
+            html += `<div class="stat-card"><h4>${data.class_count || 0}</h4><p>类数量</p></div>`;
+            html += `<div class="stat-card"><h4>${data.function_count || 0}</h4><p>函数数量</p></div>`;
+            html += `<div class="stat-card"><h4>${data.call_count || 0}</h4><p>调用数量</p></div>`;
+            html += '</div>';
+            
+            document.getElementById('overviewContent').innerHTML = html;
+        }
+        
+        function showNodeInfo(nodeId) {
+            const node = graphData.nodes.find(n => n.id === nodeId);
+            if (!node) return;
+            
+            document.getElementById('modalTitle').textContent = node.label;
+            document.getElementById('modalBody').innerHTML = `
+                <div class="form-group">
+                    <label>类型</label>
+                    <input type="text" value="${node.type}" readonly>
+                </div>
+                <div class="form-group">
+                    <label>文件</label>
+                    <input type="text" value="${node.file || ''}" readonly>
+                </div>
+                ${node.methods ? `
+                <div class="form-group">
+                    <label>方法</label>
+                    <textarea readonly rows="5">${node.methods.join('\n')}</textarea>
+                </div>
+                ` : ''}
+                ${node.args ? `
+                <div class="form-group">
+                    <label>参数</label>
+                    <textarea readonly rows="3">${node.args.join('\n')}</textarea>
+                </div>
+                ` : ''}
+            `;
+            document.getElementById('modal').classList.add('active');
+        }
+        
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+        }
+        
+        function dynamicAnalyze() {
+            const projectPath = document.getElementById('projectPath').value.trim();
+            if (!projectPath) {
+                alert('请先选择项目');
+                return;
+            }
+            
+            const entryPoint = prompt('请输入入口点文件路径（相对于项目目录）：');
+            if (!entryPoint) return;
+            
+            showLoading('overviewContent');
+            
+            fetch('/api/analyze/dynamic', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ project_path: projectPath, entry_point: entryPoint })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    showError('overviewContent', data.error);
+                    return;
+                }
+                
+                dynamicResult = data;
+                alert('动态分析完成！');
+            })
+            .catch(error => {
+                showError('overviewContent', '分析失败: ' + error.message);
+            });
+        }
+        
+        function generateTests() {
+            const testType = document.getElementById('testType').value;
+            
+            fetch('/api/test/generate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ type: testType })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    alert(data.error);
+                    return;
+                }
+                
+                document.getElementById('testsContent').innerHTML = `
+                    <div class="export-buttons">
+                        <button class="btn btn-primary" onclick="downloadTest()">下载测试文件</button>
+                        <button class="btn btn-secondary" onclick="copyTest()">复制到剪贴板</button>
+                    </div>
+                    <div class="code-block" id="testCode">${escapeHtml(data.test_code)}</div>
+                `;
+            })
+            .catch(error => {
+                alert('生成失败: ' + error.message);
+            });
+        }
+        
+        function downloadTest() {
+            const code = document.getElementById('testCode').textContent;
+            const blob = new Blob([code], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'test_generated.py';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+        
+        function copyTest() {
+            const code = document.getElementById('testCode').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                alert('已复制到剪贴板！');
+            });
+        }
+        
+        function exportReport(format) {
+            fetch(`/api/report/${format}`)
+            .then(response => {
+                if (format === 'json') {
+                    return response.json();
+                } else {
+                    return response.text();
+                }
+            })
+            .then(data => {
+                if (format === 'json') {
+                    document.getElementById('modalTitle').textContent = 'JSON报告';
+                    document.getElementById('modalBody').innerHTML = `
+                        <div class="code-block">${escapeHtml(JSON.stringify(data, null, 2))}</div>
+                    `;
+                } else {
+                    document.getElementById('modalTitle').textContent = 'Markdown报告';
+                    document.getElementById('modalBody').innerHTML = `
+                        <div class="code-block">${escapeHtml(data)}</div>
+                    `;
+                }
+                document.getElementById('modal').classList.add('active');
+            })
+            .catch(error => {
+                alert('导出失败: ' + error.message);
+            });
+        }
+        
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        fetch('/api/info')
+        .then(response => response.json())
+        .then(info => {
+            console.log('API Info:', info);
+        });
+    </script>
+</body>
+</html>
