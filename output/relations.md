@@ -1,0 +1,476 @@
+# 调用关系文档
+
+## 静态关系
+
+### 节点
+
+- **global** (unknown)
+- **Flask** (unknown)
+- **CORS** (unknown)
+- **index** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/app.py
+- **send_from_directory** (unknown)
+- **app.route** (unknown)
+- **scan_project** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/app.py
+- **data.get** (unknown)
+- **jsonify** (unknown)
+- **ProjectScanner** (class) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/scanner/scanner.py
+- **scanner.scan** (unknown)
+- **str** (unknown)
+- **static_analyze** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/app.py
+- **scan_result.get** (unknown)
+- **scanner.get_python_files** (unknown)
+- **PythonStaticAnalyzer** (class) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py
+- **analyzer.analyze** (unknown)
+- **PythonDependencyAnalyzer** (class) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py
+- **dep_analyzer.analyze** (unknown)
+- **scanner.get_js_files** (unknown)
+- **scanner.get_ts_files** (unknown)
+- **JavaScriptStaticAnalyzer** (class) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/js_analyzer.py
+- **traceback.print_exc** (unknown)
+- **dynamic_analyze** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/app.py
+- **DynamicAnalyzer** (class) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py
+- **report_json** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/app.py
+- **analysis_cache.get** (unknown)
+- **RelationReporter** (class) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py
+- **reporter.to_json** (unknown)
+- **report_markdown** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/app.py
+- **reporter.to_markdown** (unknown)
+- **report_graph** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/app.py
+- **reporter.to_graph_data** (unknown)
+- **report_knowledge_graph** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/app.py
+- **KnowledgeGraphBuilder** (class) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py
+- **builder.build_from_static** (unknown)
+- **generate_tests** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/app.py
+- **TestCaseGenerator** (class) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/test_generator/generator.py
+- **generator.generate_pytest_tests** (unknown)
+- **generator.generate_e2e_tests** (unknown)
+- **generator.generate_api_tests** (unknown)
+- **generator.generate_ui_tests** (unknown)
+- **test_report** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/app.py
+- **generator.generate_test_report** (unknown)
+- **api_info** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/app.py
+- **app.run** (unknown)
+- **PythonStaticAnalyzer.__init__** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py
+- **Path** (unknown)
+- **PythonStaticAnalyzer.analyze** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py
+- **self._analyze_file** (unknown)
+- **self._build_result** (unknown)
+- **PythonStaticAnalyzer._analyze_file** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py
+- **open** (unknown)
+- **f.read** (unknown)
+- **ast.parse** (unknown)
+- **self._visit_tree** (unknown)
+- **print** (unknown)
+- **PythonStaticAnalyzer._visit_tree** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py
+- **ast.walk** (unknown)
+- **isinstance** (unknown)
+- **self._process_import** (unknown)
+- **self._process_import_from** (unknown)
+- **self._process_class** (unknown)
+- **self._process_function** (unknown)
+- **self._process_call** (unknown)
+- **PythonStaticAnalyzer._process_import** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py
+- **PythonStaticAnalyzer._process_import_from** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py
+- **PythonStaticAnalyzer._process_class** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py
+- **self._get_name** (unknown)
+- **PythonStaticAnalyzer._process_function** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py
+- **len** (unknown)
+- **PythonStaticAnalyzer._process_call** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py
+- **self._get_caller_context** (unknown)
+- **PythonStaticAnalyzer._get_caller_context** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py
+- **PythonStaticAnalyzer._get_name** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py
+- **PythonStaticAnalyzer._build_result** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py
+- **PythonDependencyAnalyzer.__init__** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py
+- **defaultdict** (unknown)
+- **PythonDependencyAnalyzer.analyze** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py
+- **self._analyze_module_deps** (unknown)
+- **self._analyze_class_deps** (unknown)
+- **self._calculate_coupling** (unknown)
+- **dict** (unknown)
+- **PythonDependencyAnalyzer._analyze_module_deps** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py
+- **imp.get** (unknown)
+- **PythonDependencyAnalyzer._analyze_class_deps** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py
+- **classes.items** (unknown)
+- **class_info.get** (unknown)
+- **call.get** (unknown)
+- **PythonDependencyAnalyzer._calculate_coupling** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py
+- **set** (unknown)
+- **max** (unknown)
+- **JavaScriptStaticAnalyzer.__init__** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/js_analyzer.py
+- **JavaScriptStaticAnalyzer.analyze** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/js_analyzer.py
+- **JavaScriptStaticAnalyzer._analyze_file** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/js_analyzer.py
+- **self._analyze_source** (unknown)
+- **JavaScriptStaticAnalyzer._analyze_source** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/js_analyzer.py
+- **self._extract_imports** (unknown)
+- **self._extract_classes** (unknown)
+- **self._extract_functions** (unknown)
+- **self._extract_calls** (unknown)
+- **JavaScriptStaticAnalyzer._extract_imports** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/js_analyzer.py
+- **re.finditer** (unknown)
+- **match.group** (unknown)
+- **JavaScriptStaticAnalyzer._extract_classes** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/js_analyzer.py
+- **self._extract_class_body** (unknown)
+- **match.end** (unknown)
+- **self._extract_methods** (unknown)
+- **JavaScriptStaticAnalyzer._extract_class_body** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/js_analyzer.py
+- **range** (unknown)
+- **JavaScriptStaticAnalyzer._extract_methods** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/js_analyzer.py
+- **JavaScriptStaticAnalyzer._extract_functions** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/js_analyzer.py
+- **JavaScriptStaticAnalyzer._extract_calls** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/js_analyzer.py
+- **JavaScriptStaticAnalyzer._build_result** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/js_analyzer.py
+- **ProjectScanner.__init__** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/scanner/scanner.py
+- **ValueError** (unknown)
+- **ProjectScanner.scan** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/scanner/scanner.py
+- **self._detect_project_type** (unknown)
+- **self._collect_files** (unknown)
+- **ProjectScanner._detect_project_type** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/scanner/scanner.py
+- **ProjectScanner._collect_files** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/scanner/scanner.py
+- **os.walk** (unknown)
+- **self._is_excluded_dir** (unknown)
+- **file_path.relative_to** (unknown)
+- **self._get_file_type** (unknown)
+- **file_path.stat** (unknown)
+- **ProjectScanner._is_excluded_dir** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/scanner/scanner.py
+- **dir_name.startswith** (unknown)
+- **ProjectScanner._get_file_type** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/scanner/scanner.py
+- **ProjectScanner._build_result** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/scanner/scanner.py
+- **ProjectScanner.get_python_files** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/scanner/scanner.py
+- **ProjectScanner.get_js_files** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/scanner/scanner.py
+- **ProjectScanner.get_ts_files** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/scanner/scanner.py
+- **TestCaseGenerator.__init__** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/test_generator/generator.py
+- **TestCaseGenerator.set_results** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/test_generator/generator.py
+- **TestCaseGenerator.generate_pytest_tests** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/test_generator/generator.py
+- **lines.append** (unknown)
+- **functions.items** (unknown)
+- **func_info.get** (unknown)
+- **TestCaseGenerator.generate_e2e_tests** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/test_generator/generator.py
+- **self._extract_call_chains** (unknown)
+- **enumerate** (unknown)
+- **TestCaseGenerator.generate_api_tests** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/test_generator/generator.py
+- **api_call.get** (unknown)
+- **TestCaseGenerator.generate_ui_tests** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/test_generator/generator.py
+- **TestCaseGenerator._extract_call_chains** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/test_generator/generator.py
+- **call_graph.get** (unknown)
+- **TestCaseGenerator.dfs** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/test_generator/generator.py
+- **visited.add** (unknown)
+- **path.append** (unknown)
+- **dfs** (unknown)
+- **callee.get** (unknown)
+- **path.copy** (unknown)
+- **chains.append** (unknown)
+- **TestCaseGenerator.generate_test_report** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/test_generator/generator.py
+- **TestCoverageAnalyzer** (class) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/test_generator/generator.py
+- **TestCoverageAnalyzer.__init__** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/test_generator/generator.py
+- **TestCoverageAnalyzer.analyze** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/test_generator/generator.py
+- **covered_classes.add** (unknown)
+- **covered_functions.add** (unknown)
+- **list** (unknown)
+- **RelationReporter.__init__** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py
+- **RelationReporter.set_results** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py
+- **RelationReporter.to_json** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py
+- **self._build_graph** (unknown)
+- **json.dumps** (unknown)
+- **RelationReporter.to_markdown** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py
+- **edges.items** (unknown)
+- **RelationReporter.to_graph_data** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py
+- **RelationReporter._build_graph** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py
+- **nodes.append** (unknown)
+- **node_set.add** (unknown)
+- **edges.append** (unknown)
+- **RelationReporter.get_call_chains** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py
+- **RelationReporter.dfs** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py
+- **KnowledgeGraphBuilder.__init__** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py
+- **KnowledgeGraphBuilder.add_entity** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py
+- **KnowledgeGraphBuilder.add_relation** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py
+- **KnowledgeGraphBuilder.build_from_static** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py
+- **static_result.get** (unknown)
+- **self.add_entity** (unknown)
+- **self.add_relation** (unknown)
+- **KnowledgeGraphBuilder.export** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py
+- **self._to_graphml** (unknown)
+- **KnowledgeGraphBuilder._to_graphml** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py
+- **CallTracer** (class) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py
+- **CallTracer.__init__** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py
+- **threading.Lock** (unknown)
+- **CallTracer.start** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py
+- **sys.gettrace** (unknown)
+- **sys.settrace** (unknown)
+- **CallTracer.stop** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py
+- **CallTracer._trace_callback** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py
+- **self._handle_call** (unknown)
+- **self._handle_return** (unknown)
+- **CallTracer._handle_call** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py
+- **self._should_trace** (unknown)
+- **time.time** (unknown)
+- **CallTracer._handle_return** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py
+- **CallTracer._should_trace** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py
+- **CallTracer.get_call_graph** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py
+- **trace.get** (unknown)
+- **CallTracer.clear** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py
+- **DynamicAnalyzer.__init__** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py
+- **DynamicAnalyzer.analyze** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py
+- **self._execute_entry_point** (unknown)
+- **DynamicAnalyzer._execute_entry_point** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py
+- **FileNotFoundError** (unknown)
+- **DynamicAnalyzer._build_result** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py
+- **trace_function** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py
+- **wrapper** (function) - /home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py
+- **tracer.start** (unknown)
+- **func** (unknown)
+- **tracer.stop** (unknown)
+
+### 边
+
+- **global** -> **Flask** (calls)
+- **global** -> **CORS** (calls)
+- **global** -> **send_from_directory** (calls)
+- **global** -> **app.route** (calls)
+- **global** -> **data.get** (calls)
+- **global** -> **jsonify** (calls)
+- **global** -> **ProjectScanner** (calls)
+- **global** -> **scanner.scan** (calls)
+- **global** -> **str** (calls)
+- **global** -> **scan_result.get** (calls)
+- **global** -> **scanner.get_python_files** (calls)
+- **global** -> **PythonStaticAnalyzer** (calls)
+- **global** -> **analyzer.analyze** (calls)
+- **global** -> **PythonDependencyAnalyzer** (calls)
+- **global** -> **dep_analyzer.analyze** (calls)
+- **global** -> **scanner.get_js_files** (calls)
+- **global** -> **scanner.get_ts_files** (calls)
+- **global** -> **JavaScriptStaticAnalyzer** (calls)
+- **global** -> **traceback.print_exc** (calls)
+- **global** -> **DynamicAnalyzer** (calls)
+- **global** -> **analysis_cache.get** (calls)
+- **global** -> **RelationReporter** (calls)
+- **global** -> **reporter.to_json** (calls)
+- **global** -> **reporter.to_markdown** (calls)
+- **global** -> **reporter.to_graph_data** (calls)
+- **global** -> **KnowledgeGraphBuilder** (calls)
+- **global** -> **builder.build_from_static** (calls)
+- **global** -> **TestCaseGenerator** (calls)
+- **global** -> **generator.generate_pytest_tests** (calls)
+- **global** -> **generator.generate_e2e_tests** (calls)
+- **global** -> **generator.generate_api_tests** (calls)
+- **global** -> **generator.generate_ui_tests** (calls)
+- **global** -> **generator.generate_test_report** (calls)
+- **global** -> **app.run** (calls)
+- **global** -> **CallTracer** (calls)
+- **global** -> **tracer.start** (calls)
+- **global** -> **func** (calls)
+- **global** -> **tracer.stop** (calls)
+- **ProjectScanner** -> **ProjectScanner.__init__** (contains)
+- **ProjectScanner** -> **Path** (calls)
+- **ProjectScanner** -> **ValueError** (calls)
+- **ProjectScanner** -> **ProjectScanner.scan** (contains)
+- **ProjectScanner** -> **self._detect_project_type** (calls)
+- **ProjectScanner** -> **self._collect_files** (calls)
+- **ProjectScanner** -> **self._build_result** (calls)
+- **ProjectScanner** -> **ProjectScanner._detect_project_type** (contains)
+- **ProjectScanner** -> **ProjectScanner._collect_files** (contains)
+- **ProjectScanner** -> **os.walk** (calls)
+- **ProjectScanner** -> **self._is_excluded_dir** (calls)
+- **ProjectScanner** -> **file_path.relative_to** (calls)
+- **ProjectScanner** -> **self._get_file_type** (calls)
+- **ProjectScanner** -> **str** (calls)
+- **ProjectScanner** -> **file_path.stat** (calls)
+- **ProjectScanner** -> **ProjectScanner._is_excluded_dir** (contains)
+- **ProjectScanner** -> **dir_name.startswith** (calls)
+- **ProjectScanner** -> **ProjectScanner._get_file_type** (contains)
+- **ProjectScanner** -> **ProjectScanner._build_result** (contains)
+- **ProjectScanner** -> **len** (calls)
+- **ProjectScanner** -> **ProjectScanner.get_python_files** (contains)
+- **ProjectScanner** -> **ProjectScanner.get_js_files** (contains)
+- **ProjectScanner** -> **ProjectScanner.get_ts_files** (contains)
+- **PythonStaticAnalyzer** -> **PythonStaticAnalyzer.__init__** (contains)
+- **PythonStaticAnalyzer** -> **Path** (calls)
+- **PythonStaticAnalyzer** -> **PythonStaticAnalyzer.analyze** (contains)
+- **PythonStaticAnalyzer** -> **self._analyze_file** (calls)
+- **PythonStaticAnalyzer** -> **self._build_result** (calls)
+- **PythonStaticAnalyzer** -> **PythonStaticAnalyzer._analyze_file** (contains)
+- **PythonStaticAnalyzer** -> **open** (calls)
+- **PythonStaticAnalyzer** -> **f.read** (calls)
+- **PythonStaticAnalyzer** -> **ast.parse** (calls)
+- **PythonStaticAnalyzer** -> **self._visit_tree** (calls)
+- **PythonStaticAnalyzer** -> **print** (calls)
+- **PythonStaticAnalyzer** -> **PythonStaticAnalyzer._visit_tree** (contains)
+- **PythonStaticAnalyzer** -> **ast.walk** (calls)
+- **PythonStaticAnalyzer** -> **isinstance** (calls)
+- **PythonStaticAnalyzer** -> **self._process_import** (calls)
+- **PythonStaticAnalyzer** -> **self._process_import_from** (calls)
+- **PythonStaticAnalyzer** -> **self._process_class** (calls)
+- **PythonStaticAnalyzer** -> **self._process_function** (calls)
+- **PythonStaticAnalyzer** -> **self._process_call** (calls)
+- **PythonStaticAnalyzer** -> **PythonStaticAnalyzer._process_import** (contains)
+- **PythonStaticAnalyzer** -> **PythonStaticAnalyzer._process_import_from** (contains)
+- **PythonStaticAnalyzer** -> **PythonStaticAnalyzer._process_class** (contains)
+- **PythonStaticAnalyzer** -> **self._get_name** (calls)
+- **PythonStaticAnalyzer** -> **PythonStaticAnalyzer._process_function** (contains)
+- **PythonStaticAnalyzer** -> **len** (calls)
+- **PythonStaticAnalyzer** -> **PythonStaticAnalyzer._process_call** (contains)
+- **PythonStaticAnalyzer** -> **self._get_caller_context** (calls)
+- **PythonStaticAnalyzer** -> **PythonStaticAnalyzer._get_caller_context** (contains)
+- **PythonStaticAnalyzer** -> **PythonStaticAnalyzer._get_name** (contains)
+- **PythonStaticAnalyzer** -> **PythonStaticAnalyzer._build_result** (contains)
+- **PythonDependencyAnalyzer** -> **PythonDependencyAnalyzer.__init__** (contains)
+- **PythonDependencyAnalyzer** -> **defaultdict** (calls)
+- **PythonDependencyAnalyzer** -> **PythonDependencyAnalyzer.analyze** (contains)
+- **PythonDependencyAnalyzer** -> **self._analyze_module_deps** (calls)
+- **PythonDependencyAnalyzer** -> **self._analyze_class_deps** (calls)
+- **PythonDependencyAnalyzer** -> **self._calculate_coupling** (calls)
+- **PythonDependencyAnalyzer** -> **dict** (calls)
+- **PythonDependencyAnalyzer** -> **PythonDependencyAnalyzer._analyze_module_deps** (contains)
+- **PythonDependencyAnalyzer** -> **imp.get** (calls)
+- **PythonDependencyAnalyzer** -> **PythonDependencyAnalyzer._analyze_class_deps** (contains)
+- **PythonDependencyAnalyzer** -> **classes.items** (calls)
+- **PythonDependencyAnalyzer** -> **class_info.get** (calls)
+- **PythonDependencyAnalyzer** -> **call.get** (calls)
+- **PythonDependencyAnalyzer** -> **PythonDependencyAnalyzer._calculate_coupling** (contains)
+- **PythonDependencyAnalyzer** -> **set** (calls)
+- **PythonDependencyAnalyzer** -> **len** (calls)
+- **PythonDependencyAnalyzer** -> **max** (calls)
+- **JavaScriptStaticAnalyzer** -> **JavaScriptStaticAnalyzer.__init__** (contains)
+- **JavaScriptStaticAnalyzer** -> **Path** (calls)
+- **JavaScriptStaticAnalyzer** -> **JavaScriptStaticAnalyzer.analyze** (contains)
+- **JavaScriptStaticAnalyzer** -> **self._analyze_file** (calls)
+- **JavaScriptStaticAnalyzer** -> **self._build_result** (calls)
+- **JavaScriptStaticAnalyzer** -> **JavaScriptStaticAnalyzer._analyze_file** (contains)
+- **JavaScriptStaticAnalyzer** -> **open** (calls)
+- **JavaScriptStaticAnalyzer** -> **f.read** (calls)
+- **JavaScriptStaticAnalyzer** -> **self._analyze_source** (calls)
+- **JavaScriptStaticAnalyzer** -> **print** (calls)
+- **JavaScriptStaticAnalyzer** -> **JavaScriptStaticAnalyzer._analyze_source** (contains)
+- **JavaScriptStaticAnalyzer** -> **self._extract_imports** (calls)
+- **JavaScriptStaticAnalyzer** -> **self._extract_classes** (calls)
+- **JavaScriptStaticAnalyzer** -> **self._extract_functions** (calls)
+- **JavaScriptStaticAnalyzer** -> **self._extract_calls** (calls)
+- **JavaScriptStaticAnalyzer** -> **JavaScriptStaticAnalyzer._extract_imports** (contains)
+- **JavaScriptStaticAnalyzer** -> **re.finditer** (calls)
+- **JavaScriptStaticAnalyzer** -> **match.group** (calls)
+- **JavaScriptStaticAnalyzer** -> **JavaScriptStaticAnalyzer._extract_classes** (contains)
+- **JavaScriptStaticAnalyzer** -> **self._extract_class_body** (calls)
+- **JavaScriptStaticAnalyzer** -> **match.end** (calls)
+- **JavaScriptStaticAnalyzer** -> **self._extract_methods** (calls)
+- **JavaScriptStaticAnalyzer** -> **JavaScriptStaticAnalyzer._extract_class_body** (contains)
+- **JavaScriptStaticAnalyzer** -> **range** (calls)
+- **JavaScriptStaticAnalyzer** -> **len** (calls)
+- **JavaScriptStaticAnalyzer** -> **JavaScriptStaticAnalyzer._extract_methods** (contains)
+- **JavaScriptStaticAnalyzer** -> **JavaScriptStaticAnalyzer._extract_functions** (contains)
+- **JavaScriptStaticAnalyzer** -> **JavaScriptStaticAnalyzer._extract_calls** (contains)
+- **JavaScriptStaticAnalyzer** -> **JavaScriptStaticAnalyzer._build_result** (contains)
+- **DynamicAnalyzer** -> **DynamicAnalyzer.__init__** (contains)
+- **DynamicAnalyzer** -> **CallTracer** (calls)
+- **DynamicAnalyzer** -> **DynamicAnalyzer.analyze** (contains)
+- **DynamicAnalyzer** -> **self._execute_entry_point** (calls)
+- **DynamicAnalyzer** -> **print** (calls)
+- **DynamicAnalyzer** -> **traceback.print_exc** (calls)
+- **DynamicAnalyzer** -> **self._build_result** (calls)
+- **DynamicAnalyzer** -> **DynamicAnalyzer._execute_entry_point** (contains)
+- **DynamicAnalyzer** -> **FileNotFoundError** (calls)
+- **DynamicAnalyzer** -> **DynamicAnalyzer._build_result** (contains)
+- **RelationReporter** -> **RelationReporter.__init__** (contains)
+- **RelationReporter** -> **RelationReporter.set_results** (contains)
+- **RelationReporter** -> **RelationReporter.to_json** (contains)
+- **RelationReporter** -> **self._build_graph** (calls)
+- **RelationReporter** -> **json.dumps** (calls)
+- **RelationReporter** -> **RelationReporter.to_markdown** (contains)
+- **RelationReporter** -> **lines.append** (calls)
+- **RelationReporter** -> **classes.items** (calls)
+- **RelationReporter** -> **class_info.get** (calls)
+- **RelationReporter** -> **len** (calls)
+- **RelationReporter** -> **call.get** (calls)
+- **RelationReporter** -> **imp.get** (calls)
+- **RelationReporter** -> **call_graph.get** (calls)
+- **RelationReporter** -> **edges.items** (calls)
+- **RelationReporter** -> **callee.get** (calls)
+- **RelationReporter** -> **RelationReporter.to_graph_data** (contains)
+- **RelationReporter** -> **RelationReporter._build_graph** (contains)
+- **RelationReporter** -> **set** (calls)
+- **RelationReporter** -> **nodes.append** (calls)
+- **RelationReporter** -> **node_set.add** (calls)
+- **RelationReporter** -> **functions.items** (calls)
+- **RelationReporter** -> **func_info.get** (calls)
+- **RelationReporter** -> **edges.append** (calls)
+- **RelationReporter** -> **RelationReporter.get_call_chains** (contains)
+- **RelationReporter** -> **RelationReporter.dfs** (contains)
+- **RelationReporter** -> **visited.add** (calls)
+- **RelationReporter** -> **path.append** (calls)
+- **RelationReporter** -> **dfs** (calls)
+- **RelationReporter** -> **path.copy** (calls)
+- **RelationReporter** -> **chains.append** (calls)
+- **KnowledgeGraphBuilder** -> **KnowledgeGraphBuilder.__init__** (contains)
+- **KnowledgeGraphBuilder** -> **set** (calls)
+- **KnowledgeGraphBuilder** -> **KnowledgeGraphBuilder.add_entity** (contains)
+- **KnowledgeGraphBuilder** -> **KnowledgeGraphBuilder.add_relation** (contains)
+- **KnowledgeGraphBuilder** -> **KnowledgeGraphBuilder.build_from_static** (contains)
+- **KnowledgeGraphBuilder** -> **static_result.get** (calls)
+- **KnowledgeGraphBuilder** -> **classes.items** (calls)
+- **KnowledgeGraphBuilder** -> **self.add_entity** (calls)
+- **KnowledgeGraphBuilder** -> **class_info.get** (calls)
+- **KnowledgeGraphBuilder** -> **self.add_relation** (calls)
+- **KnowledgeGraphBuilder** -> **functions.items** (calls)
+- **KnowledgeGraphBuilder** -> **func_info.get** (calls)
+- **KnowledgeGraphBuilder** -> **call.get** (calls)
+- **KnowledgeGraphBuilder** -> **KnowledgeGraphBuilder.export** (contains)
+- **KnowledgeGraphBuilder** -> **json.dumps** (calls)
+- **KnowledgeGraphBuilder** -> **self._to_graphml** (calls)
+- **KnowledgeGraphBuilder** -> **ValueError** (calls)
+- **KnowledgeGraphBuilder** -> **KnowledgeGraphBuilder._to_graphml** (contains)
+- **KnowledgeGraphBuilder** -> **lines.append** (calls)
+- **KnowledgeGraphBuilder** -> **enumerate** (calls)
+- **TestCaseGenerator** -> **TestCaseGenerator.__init__** (contains)
+- **TestCaseGenerator** -> **TestCaseGenerator.set_results** (contains)
+- **TestCaseGenerator** -> **TestCaseGenerator.generate_pytest_tests** (contains)
+- **TestCaseGenerator** -> **lines.append** (calls)
+- **TestCaseGenerator** -> **classes.items** (calls)
+- **TestCaseGenerator** -> **class_info.get** (calls)
+- **TestCaseGenerator** -> **functions.items** (calls)
+- **TestCaseGenerator** -> **func_info.get** (calls)
+- **TestCaseGenerator** -> **TestCaseGenerator.generate_e2e_tests** (contains)
+- **TestCaseGenerator** -> **self._extract_call_chains** (calls)
+- **TestCaseGenerator** -> **enumerate** (calls)
+- **TestCaseGenerator** -> **len** (calls)
+- **TestCaseGenerator** -> **TestCaseGenerator.generate_api_tests** (contains)
+- **TestCaseGenerator** -> **api_call.get** (calls)
+- **TestCaseGenerator** -> **TestCaseGenerator.generate_ui_tests** (contains)
+- **TestCaseGenerator** -> **TestCaseGenerator._extract_call_chains** (contains)
+- **TestCaseGenerator** -> **call_graph.get** (calls)
+- **TestCaseGenerator** -> **set** (calls)
+- **TestCaseGenerator** -> **TestCaseGenerator.dfs** (contains)
+- **TestCaseGenerator** -> **visited.add** (calls)
+- **TestCaseGenerator** -> **path.append** (calls)
+- **TestCaseGenerator** -> **dfs** (calls)
+- **TestCaseGenerator** -> **callee.get** (calls)
+- **TestCaseGenerator** -> **path.copy** (calls)
+- **TestCaseGenerator** -> **chains.append** (calls)
+- **TestCaseGenerator** -> **TestCaseGenerator.generate_test_report** (contains)
+- **TestCoverageAnalyzer** -> **TestCoverageAnalyzer.__init__** (contains)
+- **TestCoverageAnalyzer** -> **TestCoverageAnalyzer.analyze** (contains)
+- **TestCoverageAnalyzer** -> **set** (calls)
+- **TestCoverageAnalyzer** -> **open** (calls)
+- **TestCoverageAnalyzer** -> **f.read** (calls)
+- **TestCoverageAnalyzer** -> **covered_classes.add** (calls)
+- **TestCoverageAnalyzer** -> **covered_functions.add** (calls)
+- **TestCoverageAnalyzer** -> **print** (calls)
+- **TestCoverageAnalyzer** -> **len** (calls)
+- **TestCoverageAnalyzer** -> **list** (calls)
+- **CallTracer** -> **CallTracer.__init__** (contains)
+- **CallTracer** -> **threading.Lock** (calls)
+- **CallTracer** -> **CallTracer.start** (contains)
+- **CallTracer** -> **sys.gettrace** (calls)
+- **CallTracer** -> **sys.settrace** (calls)
+- **CallTracer** -> **CallTracer.stop** (contains)
+- **CallTracer** -> **CallTracer._trace_callback** (contains)
+- **CallTracer** -> **self._handle_call** (calls)
+- **CallTracer** -> **self._handle_return** (calls)
+- **CallTracer** -> **CallTracer._handle_call** (contains)
+- **CallTracer** -> **self._should_trace** (calls)
+- **CallTracer** -> **time.time** (calls)
+- **CallTracer** -> **CallTracer._handle_return** (contains)
+- **CallTracer** -> **CallTracer._should_trace** (contains)
+- **CallTracer** -> **CallTracer.get_call_graph** (contains)
+- **CallTracer** -> **defaultdict** (calls)
+- **CallTracer** -> **trace.get** (calls)
+- **CallTracer** -> **dict** (calls)
+- **CallTracer** -> **len** (calls)
+- **CallTracer** -> **CallTracer.clear** (contains)

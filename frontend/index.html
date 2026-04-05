@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自动化测试工具</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/antd@5.12.8/dist/antd.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/antd@5.12.8/dist/reset.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f2f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #d9d9d9;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #1890ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #40a9ff;
+        }
+        .result-section {
+            margin-top: 30px;
+        }
+        .tabs {
+            margin-top: 20px;
+        }
+        .tab-content {
+            padding: 20px;
+            border: 1px solid #d9d9d9;
+            border-top: none;
+            min-height: 400px;
+        }
+        #graph {
+            width: 100%;
+            height: 500px;
+        }
+        .file-tree {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #d9d9d9;
+            padding: 10px;
+        }
+        .test-case {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>自动化测试工具</h1>
+        
+        <div class="form-group">
+            <label for="project-path">项目路径</label>
+            <input type="text" id="project-path" placeholder="请输入项目路径，例如：/path/to/project">
+        </div>
+        
+        <button onclick="scanProject()">扫描项目</button>
+        <button onclick="analyzeProject()">分析项目</button>
+        
+        <div class="result-section">
+            <div class="tabs">
+                <div>
+                    <button onclick="switchTab('file-tree')">文件结构</button>
+                    <button onclick="switchTab('graph')">调用关系图</button>
+                    <button onclick="switchTab('tests')">测试用例</button>
+                </div>
+                
+                <div id="file-tree" class="tab-content">
+                    <h3>项目文件结构</h3>
+                    <div id="file-tree-content" class="file-tree"></div>
+                </div>
+                
+                <div id="graph" class="tab-content" style="display: none;">
+                    <h3>调用关系图</h3>
+                    <div id="graph-container"></div>
+                </div>
+                
+                <div id="tests" class="tab-content" style="display: none;">
+                    <h3>生成的测试用例</h3>
+                    <div id="tests-content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let currentTab = 'file-tree';
+        let fileTreeData = {};
+        let graphData = {};
+        let testsData = [];
+        
+        function switchTab(tab) {
+            // 隐藏所有标签内容
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.style.display = 'none';
+            });
+            
+            // 显示选中的标签内容
+            document.getElementById(tab).style.display = 'block';
+            currentTab = tab;
+            
+            // 如果切换到图标签，初始化图表
+            if (tab === 'graph' && Object.keys(graphData).length > 0) {
+                initGraph();
+            }
+        }
+        
+        function scanProject() {
+            const projectPath = document.getElementById('project-path').value;
+            
+            if (!projectPath) {
+                alert('请输入项目路径');
+                return;
+            }
+            
+            fetch('http://localhost:5000/api/scan', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ project_path: projectPath })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    alert(data.error);
+                    return;
+                }
+                
+                fileTreeData = data.file_tree;
+                renderFileTree(fileTreeData);
+                alert('扫描完成');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('扫描失败');
+            });
+        }
+        
+        function analyzeProject() {
+            const projectPath = document.getElementById('project-path').value;
+            
+            if (!projectPath) {
+                alert('请输入项目路径');
+                return;
+            }
+            
+            fetch('http://localhost:5000/api/analyze', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ project_path: projectPath })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    alert(data.error);
+                    return;
+                }
+                
+                graphData = data.graph;
+                testsData = data.tests;
+                
+                renderTests(testsData);
+                switchTab('graph');
+                alert('分析完成');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('分析失败');
+            });
+        }
+        
+        function renderFileTree(tree) {
+            const container = document.getElementById('file-tree-content');
+            container.innerHTML = '';
+            
+            function renderNode(node, parentElement, path = '') {
+                for (const key in node) {
+                    const item = document.createElement('div');
+                    item.style.marginLeft = '20px';
+                    
+                    if (typeof node[key] === 'object') {
+                        const folder = document.createElement('div');
+                        folder.textContent = key;
+                        folder.style.fontWeight = 'bold';
+                        item.appendChild(folder);
+                        renderNode(node[key], item, path + key + '/');
+                    } else {
+                        item.textContent = `${key} (${node[key]})`;
+                    }
+                    
+                    parentElement.appendChild(item);
+                }
+            }
+            
+            renderNode(tree, container);
+        }
+        
+        function initGraph() {
+            const container = document.getElementById('graph-container');
+            const myChart = echarts.init(container);
+            
+            const nodes = graphData.nodes.map(node => ({
+                id: node.id,
+                name: node.label,
+                symbolSize: 50,
+                itemStyle: {
+                    color: node.type === 'class' ? '#1890ff' : '#52c41a'
+                }
+            }));
+            
+            const links = graphData.edges.map(edge => ({
+                source: edge.source,
+                target: edge.target,
+                label: {
+                    show: true,
+                    formatter: edge.label
+                }
+            }));
+            
+            const option = {
+                title: {
+                    text: '调用关系图',
+                    left: 'center'
+                },
+                tooltip: {},
+                animationDurationUpdate: 1500,
+                animationEasingUpdate: 'quinticInOut',
+                series: [
+                    {
+                        type: 'graph',
+                        layout: 'force',
+                        force: {
+                            repulsion: 100,
+                            edgeLength: [80, 120]
+                        },
+                        roam: true,
+                        label: {
+                            show: true
+                        },
+                        data: nodes,
+                        links: links,
+                        lineStyle: {
+                            opacity: 0.9,
+                            width: 2,
+                            curveness: 0
+                        }
+                    }
+                ]
+            };
+            
+            myChart.setOption(option);
+        }
+        
+        function renderTests(tests) {
+            const container = document.getElementById('tests-content');
+            container.innerHTML = '';
+            
+            tests.forEach(test => {
+                const testCase = document.createElement('div');
+                testCase.className = 'test-case';
+                testCase.innerHTML = `
+                    <h4>${test.name}</h4>
+                    <p><strong>目标:</strong> ${test.target}</p>
+                    <p><strong>描述:</strong> ${test.description}</p>
+                    <p><strong>步骤:</strong></p>
+                    <ul>
+                        ${test.steps.map(step => `<li>${step}</li>`).join('')}
+                    </ul>
+                `;
+                container.appendChild(testCase);
+            });
+        }
+    </script>
+</body>
+</html>

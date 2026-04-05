@@ -1,0 +1,2933 @@
+{
+  "static_relations": {
+    "nodes": [
+      {
+        "id": "global",
+        "data": {}
+      },
+      {
+        "id": "Flask",
+        "data": {}
+      },
+      {
+        "id": "CORS",
+        "data": {}
+      },
+      {
+        "id": "index",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/app.py"
+        }
+      },
+      {
+        "id": "send_from_directory",
+        "data": {}
+      },
+      {
+        "id": "app.route",
+        "data": {}
+      },
+      {
+        "id": "scan_project",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/app.py"
+        }
+      },
+      {
+        "id": "data.get",
+        "data": {}
+      },
+      {
+        "id": "jsonify",
+        "data": {}
+      },
+      {
+        "id": "ProjectScanner",
+        "data": {
+          "type": "class",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/scanner/scanner.py"
+        }
+      },
+      {
+        "id": "scanner.scan",
+        "data": {}
+      },
+      {
+        "id": "str",
+        "data": {}
+      },
+      {
+        "id": "static_analyze",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/app.py"
+        }
+      },
+      {
+        "id": "scan_result.get",
+        "data": {}
+      },
+      {
+        "id": "scanner.get_python_files",
+        "data": {}
+      },
+      {
+        "id": "PythonStaticAnalyzer",
+        "data": {
+          "type": "class",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py"
+        }
+      },
+      {
+        "id": "analyzer.analyze",
+        "data": {}
+      },
+      {
+        "id": "PythonDependencyAnalyzer",
+        "data": {
+          "type": "class",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py"
+        }
+      },
+      {
+        "id": "dep_analyzer.analyze",
+        "data": {}
+      },
+      {
+        "id": "scanner.get_js_files",
+        "data": {}
+      },
+      {
+        "id": "scanner.get_ts_files",
+        "data": {}
+      },
+      {
+        "id": "JavaScriptStaticAnalyzer",
+        "data": {
+          "type": "class",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/js_analyzer.py"
+        }
+      },
+      {
+        "id": "traceback.print_exc",
+        "data": {}
+      },
+      {
+        "id": "dynamic_analyze",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/app.py"
+        }
+      },
+      {
+        "id": "DynamicAnalyzer",
+        "data": {
+          "type": "class",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py"
+        }
+      },
+      {
+        "id": "report_json",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/app.py"
+        }
+      },
+      {
+        "id": "analysis_cache.get",
+        "data": {}
+      },
+      {
+        "id": "RelationReporter",
+        "data": {
+          "type": "class",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py"
+        }
+      },
+      {
+        "id": "reporter.to_json",
+        "data": {}
+      },
+      {
+        "id": "report_markdown",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/app.py"
+        }
+      },
+      {
+        "id": "reporter.to_markdown",
+        "data": {}
+      },
+      {
+        "id": "report_graph",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/app.py"
+        }
+      },
+      {
+        "id": "reporter.to_graph_data",
+        "data": {}
+      },
+      {
+        "id": "report_knowledge_graph",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/app.py"
+        }
+      },
+      {
+        "id": "KnowledgeGraphBuilder",
+        "data": {
+          "type": "class",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py"
+        }
+      },
+      {
+        "id": "builder.build_from_static",
+        "data": {}
+      },
+      {
+        "id": "generate_tests",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/app.py"
+        }
+      },
+      {
+        "id": "TestCaseGenerator",
+        "data": {
+          "type": "class",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/test_generator/generator.py"
+        }
+      },
+      {
+        "id": "generator.generate_pytest_tests",
+        "data": {}
+      },
+      {
+        "id": "generator.generate_e2e_tests",
+        "data": {}
+      },
+      {
+        "id": "generator.generate_api_tests",
+        "data": {}
+      },
+      {
+        "id": "generator.generate_ui_tests",
+        "data": {}
+      },
+      {
+        "id": "test_report",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/app.py"
+        }
+      },
+      {
+        "id": "generator.generate_test_report",
+        "data": {}
+      },
+      {
+        "id": "api_info",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/app.py"
+        }
+      },
+      {
+        "id": "app.run",
+        "data": {}
+      },
+      {
+        "id": "PythonStaticAnalyzer.__init__",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py"
+        }
+      },
+      {
+        "id": "Path",
+        "data": {}
+      },
+      {
+        "id": "PythonStaticAnalyzer.analyze",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py"
+        }
+      },
+      {
+        "id": "self._analyze_file",
+        "data": {}
+      },
+      {
+        "id": "self._build_result",
+        "data": {}
+      },
+      {
+        "id": "PythonStaticAnalyzer._analyze_file",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py"
+        }
+      },
+      {
+        "id": "open",
+        "data": {}
+      },
+      {
+        "id": "f.read",
+        "data": {}
+      },
+      {
+        "id": "ast.parse",
+        "data": {}
+      },
+      {
+        "id": "self._visit_tree",
+        "data": {}
+      },
+      {
+        "id": "print",
+        "data": {}
+      },
+      {
+        "id": "PythonStaticAnalyzer._visit_tree",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py"
+        }
+      },
+      {
+        "id": "ast.walk",
+        "data": {}
+      },
+      {
+        "id": "isinstance",
+        "data": {}
+      },
+      {
+        "id": "self._process_import",
+        "data": {}
+      },
+      {
+        "id": "self._process_import_from",
+        "data": {}
+      },
+      {
+        "id": "self._process_class",
+        "data": {}
+      },
+      {
+        "id": "self._process_function",
+        "data": {}
+      },
+      {
+        "id": "self._process_call",
+        "data": {}
+      },
+      {
+        "id": "PythonStaticAnalyzer._process_import",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py"
+        }
+      },
+      {
+        "id": "PythonStaticAnalyzer._process_import_from",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py"
+        }
+      },
+      {
+        "id": "PythonStaticAnalyzer._process_class",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py"
+        }
+      },
+      {
+        "id": "self._get_name",
+        "data": {}
+      },
+      {
+        "id": "PythonStaticAnalyzer._process_function",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py"
+        }
+      },
+      {
+        "id": "len",
+        "data": {}
+      },
+      {
+        "id": "PythonStaticAnalyzer._process_call",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py"
+        }
+      },
+      {
+        "id": "self._get_caller_context",
+        "data": {}
+      },
+      {
+        "id": "PythonStaticAnalyzer._get_caller_context",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py"
+        }
+      },
+      {
+        "id": "PythonStaticAnalyzer._get_name",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py"
+        }
+      },
+      {
+        "id": "PythonStaticAnalyzer._build_result",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py"
+        }
+      },
+      {
+        "id": "PythonDependencyAnalyzer.__init__",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py"
+        }
+      },
+      {
+        "id": "defaultdict",
+        "data": {}
+      },
+      {
+        "id": "PythonDependencyAnalyzer.analyze",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py"
+        }
+      },
+      {
+        "id": "self._analyze_module_deps",
+        "data": {}
+      },
+      {
+        "id": "self._analyze_class_deps",
+        "data": {}
+      },
+      {
+        "id": "self._calculate_coupling",
+        "data": {}
+      },
+      {
+        "id": "dict",
+        "data": {}
+      },
+      {
+        "id": "PythonDependencyAnalyzer._analyze_module_deps",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py"
+        }
+      },
+      {
+        "id": "imp.get",
+        "data": {}
+      },
+      {
+        "id": "PythonDependencyAnalyzer._analyze_class_deps",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py"
+        }
+      },
+      {
+        "id": "classes.items",
+        "data": {}
+      },
+      {
+        "id": "class_info.get",
+        "data": {}
+      },
+      {
+        "id": "call.get",
+        "data": {}
+      },
+      {
+        "id": "PythonDependencyAnalyzer._calculate_coupling",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/python_analyzer.py"
+        }
+      },
+      {
+        "id": "set",
+        "data": {}
+      },
+      {
+        "id": "max",
+        "data": {}
+      },
+      {
+        "id": "JavaScriptStaticAnalyzer.__init__",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/js_analyzer.py"
+        }
+      },
+      {
+        "id": "JavaScriptStaticAnalyzer.analyze",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/js_analyzer.py"
+        }
+      },
+      {
+        "id": "JavaScriptStaticAnalyzer._analyze_file",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/js_analyzer.py"
+        }
+      },
+      {
+        "id": "self._analyze_source",
+        "data": {}
+      },
+      {
+        "id": "JavaScriptStaticAnalyzer._analyze_source",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/js_analyzer.py"
+        }
+      },
+      {
+        "id": "self._extract_imports",
+        "data": {}
+      },
+      {
+        "id": "self._extract_classes",
+        "data": {}
+      },
+      {
+        "id": "self._extract_functions",
+        "data": {}
+      },
+      {
+        "id": "self._extract_calls",
+        "data": {}
+      },
+      {
+        "id": "JavaScriptStaticAnalyzer._extract_imports",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/js_analyzer.py"
+        }
+      },
+      {
+        "id": "re.finditer",
+        "data": {}
+      },
+      {
+        "id": "match.group",
+        "data": {}
+      },
+      {
+        "id": "JavaScriptStaticAnalyzer._extract_classes",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/js_analyzer.py"
+        }
+      },
+      {
+        "id": "self._extract_class_body",
+        "data": {}
+      },
+      {
+        "id": "match.end",
+        "data": {}
+      },
+      {
+        "id": "self._extract_methods",
+        "data": {}
+      },
+      {
+        "id": "JavaScriptStaticAnalyzer._extract_class_body",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/js_analyzer.py"
+        }
+      },
+      {
+        "id": "range",
+        "data": {}
+      },
+      {
+        "id": "JavaScriptStaticAnalyzer._extract_methods",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/js_analyzer.py"
+        }
+      },
+      {
+        "id": "JavaScriptStaticAnalyzer._extract_functions",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/js_analyzer.py"
+        }
+      },
+      {
+        "id": "JavaScriptStaticAnalyzer._extract_calls",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/js_analyzer.py"
+        }
+      },
+      {
+        "id": "JavaScriptStaticAnalyzer._build_result",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/static_analyzer/js_analyzer.py"
+        }
+      },
+      {
+        "id": "ProjectScanner.__init__",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/scanner/scanner.py"
+        }
+      },
+      {
+        "id": "ValueError",
+        "data": {}
+      },
+      {
+        "id": "ProjectScanner.scan",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/scanner/scanner.py"
+        }
+      },
+      {
+        "id": "self._detect_project_type",
+        "data": {}
+      },
+      {
+        "id": "self._collect_files",
+        "data": {}
+      },
+      {
+        "id": "ProjectScanner._detect_project_type",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/scanner/scanner.py"
+        }
+      },
+      {
+        "id": "ProjectScanner._collect_files",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/scanner/scanner.py"
+        }
+      },
+      {
+        "id": "os.walk",
+        "data": {}
+      },
+      {
+        "id": "self._is_excluded_dir",
+        "data": {}
+      },
+      {
+        "id": "file_path.relative_to",
+        "data": {}
+      },
+      {
+        "id": "self._get_file_type",
+        "data": {}
+      },
+      {
+        "id": "file_path.stat",
+        "data": {}
+      },
+      {
+        "id": "ProjectScanner._is_excluded_dir",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/scanner/scanner.py"
+        }
+      },
+      {
+        "id": "dir_name.startswith",
+        "data": {}
+      },
+      {
+        "id": "ProjectScanner._get_file_type",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/scanner/scanner.py"
+        }
+      },
+      {
+        "id": "ProjectScanner._build_result",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/scanner/scanner.py"
+        }
+      },
+      {
+        "id": "ProjectScanner.get_python_files",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/scanner/scanner.py"
+        }
+      },
+      {
+        "id": "ProjectScanner.get_js_files",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/scanner/scanner.py"
+        }
+      },
+      {
+        "id": "ProjectScanner.get_ts_files",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/scanner/scanner.py"
+        }
+      },
+      {
+        "id": "TestCaseGenerator.__init__",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/test_generator/generator.py"
+        }
+      },
+      {
+        "id": "TestCaseGenerator.set_results",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/test_generator/generator.py"
+        }
+      },
+      {
+        "id": "TestCaseGenerator.generate_pytest_tests",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/test_generator/generator.py"
+        }
+      },
+      {
+        "id": "lines.append",
+        "data": {}
+      },
+      {
+        "id": "functions.items",
+        "data": {}
+      },
+      {
+        "id": "func_info.get",
+        "data": {}
+      },
+      {
+        "id": "TestCaseGenerator.generate_e2e_tests",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/test_generator/generator.py"
+        }
+      },
+      {
+        "id": "self._extract_call_chains",
+        "data": {}
+      },
+      {
+        "id": "enumerate",
+        "data": {}
+      },
+      {
+        "id": "TestCaseGenerator.generate_api_tests",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/test_generator/generator.py"
+        }
+      },
+      {
+        "id": "api_call.get",
+        "data": {}
+      },
+      {
+        "id": "TestCaseGenerator.generate_ui_tests",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/test_generator/generator.py"
+        }
+      },
+      {
+        "id": "TestCaseGenerator._extract_call_chains",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/test_generator/generator.py"
+        }
+      },
+      {
+        "id": "call_graph.get",
+        "data": {}
+      },
+      {
+        "id": "TestCaseGenerator.dfs",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/test_generator/generator.py"
+        }
+      },
+      {
+        "id": "visited.add",
+        "data": {}
+      },
+      {
+        "id": "path.append",
+        "data": {}
+      },
+      {
+        "id": "dfs",
+        "data": {}
+      },
+      {
+        "id": "callee.get",
+        "data": {}
+      },
+      {
+        "id": "path.copy",
+        "data": {}
+      },
+      {
+        "id": "chains.append",
+        "data": {}
+      },
+      {
+        "id": "TestCaseGenerator.generate_test_report",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/test_generator/generator.py"
+        }
+      },
+      {
+        "id": "TestCoverageAnalyzer",
+        "data": {
+          "type": "class",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/test_generator/generator.py"
+        }
+      },
+      {
+        "id": "TestCoverageAnalyzer.__init__",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/test_generator/generator.py"
+        }
+      },
+      {
+        "id": "TestCoverageAnalyzer.analyze",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/test_generator/generator.py"
+        }
+      },
+      {
+        "id": "covered_classes.add",
+        "data": {}
+      },
+      {
+        "id": "covered_functions.add",
+        "data": {}
+      },
+      {
+        "id": "list",
+        "data": {}
+      },
+      {
+        "id": "RelationReporter.__init__",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py"
+        }
+      },
+      {
+        "id": "RelationReporter.set_results",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py"
+        }
+      },
+      {
+        "id": "RelationReporter.to_json",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py"
+        }
+      },
+      {
+        "id": "self._build_graph",
+        "data": {}
+      },
+      {
+        "id": "json.dumps",
+        "data": {}
+      },
+      {
+        "id": "RelationReporter.to_markdown",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py"
+        }
+      },
+      {
+        "id": "edges.items",
+        "data": {}
+      },
+      {
+        "id": "RelationReporter.to_graph_data",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py"
+        }
+      },
+      {
+        "id": "RelationReporter._build_graph",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py"
+        }
+      },
+      {
+        "id": "nodes.append",
+        "data": {}
+      },
+      {
+        "id": "node_set.add",
+        "data": {}
+      },
+      {
+        "id": "edges.append",
+        "data": {}
+      },
+      {
+        "id": "RelationReporter.get_call_chains",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py"
+        }
+      },
+      {
+        "id": "RelationReporter.dfs",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py"
+        }
+      },
+      {
+        "id": "KnowledgeGraphBuilder.__init__",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py"
+        }
+      },
+      {
+        "id": "KnowledgeGraphBuilder.add_entity",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py"
+        }
+      },
+      {
+        "id": "KnowledgeGraphBuilder.add_relation",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py"
+        }
+      },
+      {
+        "id": "KnowledgeGraphBuilder.build_from_static",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py"
+        }
+      },
+      {
+        "id": "static_result.get",
+        "data": {}
+      },
+      {
+        "id": "self.add_entity",
+        "data": {}
+      },
+      {
+        "id": "self.add_relation",
+        "data": {}
+      },
+      {
+        "id": "KnowledgeGraphBuilder.export",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py"
+        }
+      },
+      {
+        "id": "self._to_graphml",
+        "data": {}
+      },
+      {
+        "id": "KnowledgeGraphBuilder._to_graphml",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/relation_reporter/reporter.py"
+        }
+      },
+      {
+        "id": "CallTracer",
+        "data": {
+          "type": "class",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py"
+        }
+      },
+      {
+        "id": "CallTracer.__init__",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py"
+        }
+      },
+      {
+        "id": "threading.Lock",
+        "data": {}
+      },
+      {
+        "id": "CallTracer.start",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py"
+        }
+      },
+      {
+        "id": "sys.gettrace",
+        "data": {}
+      },
+      {
+        "id": "sys.settrace",
+        "data": {}
+      },
+      {
+        "id": "CallTracer.stop",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py"
+        }
+      },
+      {
+        "id": "CallTracer._trace_callback",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py"
+        }
+      },
+      {
+        "id": "self._handle_call",
+        "data": {}
+      },
+      {
+        "id": "self._handle_return",
+        "data": {}
+      },
+      {
+        "id": "CallTracer._handle_call",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py"
+        }
+      },
+      {
+        "id": "self._should_trace",
+        "data": {}
+      },
+      {
+        "id": "time.time",
+        "data": {}
+      },
+      {
+        "id": "CallTracer._handle_return",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py"
+        }
+      },
+      {
+        "id": "CallTracer._should_trace",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py"
+        }
+      },
+      {
+        "id": "CallTracer.get_call_graph",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py"
+        }
+      },
+      {
+        "id": "trace.get",
+        "data": {}
+      },
+      {
+        "id": "CallTracer.clear",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py"
+        }
+      },
+      {
+        "id": "DynamicAnalyzer.__init__",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py"
+        }
+      },
+      {
+        "id": "DynamicAnalyzer.analyze",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py"
+        }
+      },
+      {
+        "id": "self._execute_entry_point",
+        "data": {}
+      },
+      {
+        "id": "DynamicAnalyzer._execute_entry_point",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py"
+        }
+      },
+      {
+        "id": "FileNotFoundError",
+        "data": {}
+      },
+      {
+        "id": "DynamicAnalyzer._build_result",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py"
+        }
+      },
+      {
+        "id": "trace_function",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py"
+        }
+      },
+      {
+        "id": "wrapper",
+        "data": {
+          "type": "function",
+          "file": "/home/wangsen/programe/EvaluationLLM/GSB0403/67/Seed-Code-Pro-0330-light-preview/analyzer/dynamic_analyzer/tracer.py"
+        }
+      },
+      {
+        "id": "tracer.start",
+        "data": {}
+      },
+      {
+        "id": "func",
+        "data": {}
+      },
+      {
+        "id": "tracer.stop",
+        "data": {}
+      }
+    ],
+    "edges": [
+      {
+        "source": "global",
+        "target": "Flask",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "CORS",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "send_from_directory",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "app.route",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "data.get",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "jsonify",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "ProjectScanner",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "scanner.scan",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "str",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "scan_result.get",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "scanner.get_python_files",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "PythonStaticAnalyzer",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "analyzer.analyze",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "PythonDependencyAnalyzer",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "dep_analyzer.analyze",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "scanner.get_js_files",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "scanner.get_ts_files",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "JavaScriptStaticAnalyzer",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "traceback.print_exc",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "DynamicAnalyzer",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "analysis_cache.get",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "RelationReporter",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "reporter.to_json",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "reporter.to_markdown",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "reporter.to_graph_data",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "KnowledgeGraphBuilder",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "builder.build_from_static",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "TestCaseGenerator",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "generator.generate_pytest_tests",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "generator.generate_e2e_tests",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "generator.generate_api_tests",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "generator.generate_ui_tests",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "generator.generate_test_report",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "app.run",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "CallTracer",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "tracer.start",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "func",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "global",
+        "target": "tracer.stop",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "ProjectScanner",
+        "target": "ProjectScanner.__init__",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "ProjectScanner",
+        "target": "Path",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "ProjectScanner",
+        "target": "ValueError",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "ProjectScanner",
+        "target": "ProjectScanner.scan",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "ProjectScanner",
+        "target": "self._detect_project_type",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "ProjectScanner",
+        "target": "self._collect_files",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "ProjectScanner",
+        "target": "self._build_result",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "ProjectScanner",
+        "target": "ProjectScanner._detect_project_type",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "ProjectScanner",
+        "target": "ProjectScanner._collect_files",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "ProjectScanner",
+        "target": "os.walk",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "ProjectScanner",
+        "target": "self._is_excluded_dir",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "ProjectScanner",
+        "target": "file_path.relative_to",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "ProjectScanner",
+        "target": "self._get_file_type",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "ProjectScanner",
+        "target": "str",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "ProjectScanner",
+        "target": "file_path.stat",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "ProjectScanner",
+        "target": "ProjectScanner._is_excluded_dir",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "ProjectScanner",
+        "target": "dir_name.startswith",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "ProjectScanner",
+        "target": "ProjectScanner._get_file_type",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "ProjectScanner",
+        "target": "ProjectScanner._build_result",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "ProjectScanner",
+        "target": "len",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "ProjectScanner",
+        "target": "ProjectScanner.get_python_files",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "ProjectScanner",
+        "target": "ProjectScanner.get_js_files",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "ProjectScanner",
+        "target": "ProjectScanner.get_ts_files",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "PythonStaticAnalyzer.__init__",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "Path",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "PythonStaticAnalyzer.analyze",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "self._analyze_file",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "self._build_result",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "PythonStaticAnalyzer._analyze_file",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "open",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "f.read",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "ast.parse",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "self._visit_tree",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "print",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "PythonStaticAnalyzer._visit_tree",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "ast.walk",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "isinstance",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "self._process_import",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "self._process_import_from",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "self._process_class",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "self._process_function",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "self._process_call",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "PythonStaticAnalyzer._process_import",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "PythonStaticAnalyzer._process_import_from",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "PythonStaticAnalyzer._process_class",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "self._get_name",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "PythonStaticAnalyzer._process_function",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "len",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "PythonStaticAnalyzer._process_call",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "self._get_caller_context",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "PythonStaticAnalyzer._get_caller_context",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "PythonStaticAnalyzer._get_name",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "PythonStaticAnalyzer",
+        "target": "PythonStaticAnalyzer._build_result",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "PythonDependencyAnalyzer",
+        "target": "PythonDependencyAnalyzer.__init__",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "PythonDependencyAnalyzer",
+        "target": "defaultdict",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonDependencyAnalyzer",
+        "target": "PythonDependencyAnalyzer.analyze",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "PythonDependencyAnalyzer",
+        "target": "self._analyze_module_deps",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonDependencyAnalyzer",
+        "target": "self._analyze_class_deps",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonDependencyAnalyzer",
+        "target": "self._calculate_coupling",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonDependencyAnalyzer",
+        "target": "dict",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonDependencyAnalyzer",
+        "target": "PythonDependencyAnalyzer._analyze_module_deps",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "PythonDependencyAnalyzer",
+        "target": "imp.get",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonDependencyAnalyzer",
+        "target": "PythonDependencyAnalyzer._analyze_class_deps",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "PythonDependencyAnalyzer",
+        "target": "classes.items",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonDependencyAnalyzer",
+        "target": "class_info.get",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonDependencyAnalyzer",
+        "target": "call.get",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonDependencyAnalyzer",
+        "target": "PythonDependencyAnalyzer._calculate_coupling",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "PythonDependencyAnalyzer",
+        "target": "set",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonDependencyAnalyzer",
+        "target": "len",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "PythonDependencyAnalyzer",
+        "target": "max",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "JavaScriptStaticAnalyzer.__init__",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "Path",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "JavaScriptStaticAnalyzer.analyze",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "self._analyze_file",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "self._build_result",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "JavaScriptStaticAnalyzer._analyze_file",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "open",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "f.read",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "self._analyze_source",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "print",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "JavaScriptStaticAnalyzer._analyze_source",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "self._extract_imports",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "self._extract_classes",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "self._extract_functions",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "self._extract_calls",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "JavaScriptStaticAnalyzer._extract_imports",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "re.finditer",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "match.group",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "JavaScriptStaticAnalyzer._extract_classes",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "self._extract_class_body",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "match.end",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "self._extract_methods",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "JavaScriptStaticAnalyzer._extract_class_body",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "range",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "len",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "JavaScriptStaticAnalyzer._extract_methods",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "JavaScriptStaticAnalyzer._extract_functions",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "JavaScriptStaticAnalyzer._extract_calls",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "JavaScriptStaticAnalyzer",
+        "target": "JavaScriptStaticAnalyzer._build_result",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "DynamicAnalyzer",
+        "target": "DynamicAnalyzer.__init__",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "DynamicAnalyzer",
+        "target": "CallTracer",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "DynamicAnalyzer",
+        "target": "DynamicAnalyzer.analyze",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "DynamicAnalyzer",
+        "target": "self._execute_entry_point",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "DynamicAnalyzer",
+        "target": "print",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "DynamicAnalyzer",
+        "target": "traceback.print_exc",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "DynamicAnalyzer",
+        "target": "self._build_result",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "DynamicAnalyzer",
+        "target": "DynamicAnalyzer._execute_entry_point",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "DynamicAnalyzer",
+        "target": "FileNotFoundError",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "DynamicAnalyzer",
+        "target": "DynamicAnalyzer._build_result",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "RelationReporter.__init__",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "RelationReporter.set_results",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "RelationReporter.to_json",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "self._build_graph",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "json.dumps",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "RelationReporter.to_markdown",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "lines.append",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "classes.items",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "class_info.get",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "len",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "call.get",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "imp.get",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "call_graph.get",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "edges.items",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "callee.get",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "RelationReporter.to_graph_data",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "RelationReporter._build_graph",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "set",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "nodes.append",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "node_set.add",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "functions.items",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "func_info.get",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "edges.append",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "RelationReporter.get_call_chains",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "RelationReporter.dfs",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "visited.add",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "path.append",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "dfs",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "path.copy",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "RelationReporter",
+        "target": "chains.append",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "KnowledgeGraphBuilder",
+        "target": "KnowledgeGraphBuilder.__init__",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "KnowledgeGraphBuilder",
+        "target": "set",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "KnowledgeGraphBuilder",
+        "target": "KnowledgeGraphBuilder.add_entity",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "KnowledgeGraphBuilder",
+        "target": "KnowledgeGraphBuilder.add_relation",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "KnowledgeGraphBuilder",
+        "target": "KnowledgeGraphBuilder.build_from_static",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "KnowledgeGraphBuilder",
+        "target": "static_result.get",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "KnowledgeGraphBuilder",
+        "target": "classes.items",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "KnowledgeGraphBuilder",
+        "target": "self.add_entity",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "KnowledgeGraphBuilder",
+        "target": "class_info.get",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "KnowledgeGraphBuilder",
+        "target": "self.add_relation",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "KnowledgeGraphBuilder",
+        "target": "functions.items",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "KnowledgeGraphBuilder",
+        "target": "func_info.get",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "KnowledgeGraphBuilder",
+        "target": "call.get",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "KnowledgeGraphBuilder",
+        "target": "KnowledgeGraphBuilder.export",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "KnowledgeGraphBuilder",
+        "target": "json.dumps",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "KnowledgeGraphBuilder",
+        "target": "self._to_graphml",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "KnowledgeGraphBuilder",
+        "target": "ValueError",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "KnowledgeGraphBuilder",
+        "target": "KnowledgeGraphBuilder._to_graphml",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "KnowledgeGraphBuilder",
+        "target": "lines.append",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "KnowledgeGraphBuilder",
+        "target": "enumerate",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "TestCaseGenerator",
+        "target": "TestCaseGenerator.__init__",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "TestCaseGenerator",
+        "target": "TestCaseGenerator.set_results",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "TestCaseGenerator",
+        "target": "TestCaseGenerator.generate_pytest_tests",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "TestCaseGenerator",
+        "target": "lines.append",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "TestCaseGenerator",
+        "target": "classes.items",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "TestCaseGenerator",
+        "target": "class_info.get",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "TestCaseGenerator",
+        "target": "functions.items",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "TestCaseGenerator",
+        "target": "func_info.get",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "TestCaseGenerator",
+        "target": "TestCaseGenerator.generate_e2e_tests",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "TestCaseGenerator",
+        "target": "self._extract_call_chains",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "TestCaseGenerator",
+        "target": "enumerate",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "TestCaseGenerator",
+        "target": "len",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "TestCaseGenerator",
+        "target": "TestCaseGenerator.generate_api_tests",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "TestCaseGenerator",
+        "target": "api_call.get",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "TestCaseGenerator",
+        "target": "TestCaseGenerator.generate_ui_tests",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "TestCaseGenerator",
+        "target": "TestCaseGenerator._extract_call_chains",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "TestCaseGenerator",
+        "target": "call_graph.get",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "TestCaseGenerator",
+        "target": "set",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "TestCaseGenerator",
+        "target": "TestCaseGenerator.dfs",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "TestCaseGenerator",
+        "target": "visited.add",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "TestCaseGenerator",
+        "target": "path.append",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "TestCaseGenerator",
+        "target": "dfs",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "TestCaseGenerator",
+        "target": "callee.get",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "TestCaseGenerator",
+        "target": "path.copy",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "TestCaseGenerator",
+        "target": "chains.append",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "TestCaseGenerator",
+        "target": "TestCaseGenerator.generate_test_report",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "TestCoverageAnalyzer",
+        "target": "TestCoverageAnalyzer.__init__",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "TestCoverageAnalyzer",
+        "target": "TestCoverageAnalyzer.analyze",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "TestCoverageAnalyzer",
+        "target": "set",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "TestCoverageAnalyzer",
+        "target": "open",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "TestCoverageAnalyzer",
+        "target": "f.read",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "TestCoverageAnalyzer",
+        "target": "covered_classes.add",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "TestCoverageAnalyzer",
+        "target": "covered_functions.add",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "TestCoverageAnalyzer",
+        "target": "print",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "TestCoverageAnalyzer",
+        "target": "len",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "TestCoverageAnalyzer",
+        "target": "list",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "CallTracer",
+        "target": "CallTracer.__init__",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "CallTracer",
+        "target": "threading.Lock",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "CallTracer",
+        "target": "CallTracer.start",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "CallTracer",
+        "target": "sys.gettrace",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "CallTracer",
+        "target": "sys.settrace",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "CallTracer",
+        "target": "CallTracer.stop",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "CallTracer",
+        "target": "CallTracer._trace_callback",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "CallTracer",
+        "target": "self._handle_call",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "CallTracer",
+        "target": "self._handle_return",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "CallTracer",
+        "target": "CallTracer._handle_call",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "CallTracer",
+        "target": "self._should_trace",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "CallTracer",
+        "target": "time.time",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "CallTracer",
+        "target": "CallTracer._handle_return",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "CallTracer",
+        "target": "CallTracer._should_trace",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "CallTracer",
+        "target": "CallTracer.get_call_graph",
+        "data": {
+          "type": "contains"
+        }
+      },
+      {
+        "source": "CallTracer",
+        "target": "defaultdict",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "CallTracer",
+        "target": "trace.get",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "CallTracer",
+        "target": "dict",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "CallTracer",
+        "target": "len",
+        "data": {
+          "type": "calls"
+        }
+      },
+      {
+        "source": "CallTracer",
+        "target": "CallTracer.clear",
+        "data": {
+          "type": "contains"
+        }
+      }
+    ]
+  },
+  "dynamic_relations": {}
+}
