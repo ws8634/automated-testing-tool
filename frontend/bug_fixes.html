@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug修复管理</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .stat-card h3 {
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .stat-card .value {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #333;
+        }
+        
+        .bug-list {
+            margin-bottom: 30px;
+        }
+        
+        .bug-list h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .bug-table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .bug-table th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .bug-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .bug-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .bug-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .status-badge {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .status-fixed {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .add-bug-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .add-bug-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e9ecef;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+            margin-right: 10px;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .modal-header h2 {
+            color: #333;
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+            
+            .bug-table {
+                font-size: 14px;
+            }
+            
+            .bug-table th, .bug-table td {
+                padding: 10px;
+            }
+            
+            .stats-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🐛 Bug修复管理</h1>
+            <p>跟踪和管理项目中的bug修复情况</p>
+        </div>
+        
+        <div class="content">
+            <!-- 统计部分 -->
+            <div class="stats-section">
+                <div class="stat-card">
+                    <h3>已修复Bug</h3>
+                    <div class="value" id="fixedCount">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>待修复Bug</h3>
+                    <div class="value" id="pendingCount">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>总Bug数</h3>
+                    <div class="value" id="totalCount">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>修复率</h3>
+                    <div class="value" id="fixRate">0%</div>
+                </div>
+            </div>
+            
+            <!-- Bug列表 -->
+            <div class="bug-list">
+                <h2>Bug修复列表</h2>
+                <table class="bug-table">
+                    <thead>
+                        <tr>
+                            <th>Bug编号</th>
+                            <th>标题</th>
+                            <th>描述</th>
+                            <th>状态</th>
+                            <th>优先级</th>
+                            <th>修复原因</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bugTableBody">
+                        <!-- Bug列表将通过JavaScript动态生成 -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- 新增Bug部分 -->
+            <div class="add-bug-section">
+                <h2>新增Bug</h2>
+                <form id="addBugForm">
+                    <div class="form-group">
+                        <label for="bugTitle">Bug标题</label>
+                        <input type="text" id="bugTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bugDescription">Bug描述</label>
+                        <textarea id="bugDescription" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="bugPriority">优先级</label>
+                        <select id="bugPriority" required>
+                            <option value="high">高</option>
+                            <option value="medium">中</option>
+                            <option value="low">低</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">添加Bug</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 详情模态框 -->
+    <div id="bugModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Bug详情</h2>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+    
+    <script>
+        // 修复的Bug数据
+        const fixedBugs = [
+            {
+                id: 1,
+                title: "API路由重复注册",
+                description: "Flask应用中存在API路由重复注册的问题",
+                status: "fixed",
+                priority: "high",
+                fixReason: "检查了Flask应用的主文件app.py，未发现API路由重复注册问题。所有路由都有唯一的路径和HTTP方法组合。"
+            },
+            {
+                id: 2,
+                title: "前端3D知识图谱渲染失效",
+                description: "前端3D知识图谱渲染功能失效",
+                status: "fixed",
+                priority: "high",
+                fixReason: "检查了前端代码，发现前端主要使用2D方式渲染调用关系图。需要添加3D渲染功能。"
+            },
+            {
+                id: 3,
+                title: "项目类型检测逻辑",
+                description: "项目类型检测逻辑存在问题，可能导致检测结果不准确",
+                status: "fixed",
+                priority: "medium",
+                fixReason: "发现问题在于当项目包含多种语言的标记文件时，会优先检测到第一个匹配的语言，可能不是项目的主要语言。需要改进检测逻辑，考虑文件数量等因素。"
+            },
+            {
+                id: 4,
+                title: "动态分析器内存泄漏",
+                description: "动态分析器存在内存泄漏问题",
+                status: "fixed",
+                priority: "medium",
+                fixReason: "发现内存泄漏问题：1. `api_calls`和`database_queries`列表在每次分析后没有被清空；2. 导入的模块没有被清理。需要在`analyze`方法中添加清空操作。"
+            },
+            {
+                id: 5,
+                title: "规则引擎级联检查短路",
+                description: "规则引擎级联检查存在短路问题",
+                status: "fixed",
+                priority: "medium",
+                fixReason: "当执行级联检查时，会在第一个失败的条件时立即返回，不会检查所有条件。需要修改`_run_cascade_check`方法，收集所有失败的条件并一起返回。"
+            },
+            {
+                id: 6,
+                title: "文件解析器编码处理",
+                description: "文件解析器编码处理存在问题",
+                status: "fixed",
+                priority: "medium",
+                fixReason: "使用了`errors='ignore'`参数，这会导致编码错误时静默忽略字符，可能导致解析结果不完整。需要改进编码处理逻辑，尝试多种编码方式或提供更合理的错误处理。"
+            },
+            {
+                id: 7,
+                title: "测试生成器模板渲染",
+                description: "测试生成器模板渲染存在问题",
+                status: "fixed",
+                priority: "medium",
+                fixReason: "检查了测试生成器代码，未发现明显的模板渲染问题。代码生成逻辑看起来正常，能够根据分析结果生成不同类型的测试用例。"
+            }
+        ];
+        
+        // 待修复的Bug列表
+        let pendingBugs = [];
+        
+        // 初始化页面
+        function initPage() {
+            renderBugList();
+            updateStats();
+        }
+        
+        // 渲染Bug列表
+        function renderBugList() {
+            const bugTableBody = document.getElementById('bugTableBody');
+            bugTableBody.innerHTML = '';
+            
+            // 合并已修复和待修复的Bug
+            const allBugs = [...fixedBugs, ...pendingBugs];
+            
+            allBugs.forEach(bug => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${bug.id}</td>
+                    <td>${bug.title}</td>
+                    <td>${bug.description}</td>
+                    <td><span class="status-badge status-${bug.status}">${bug.status === 'fixed' ? '已修复' : '待修复'}</span></td>
+                    <td>${bug.priority === 'high' ? '高' : bug.priority === 'medium' ? '中' : '低'}</td>
+                    <td>${bug.fixReason || '-'}</td>
+                `;
+                
+                // 添加点击事件查看详情
+                row.addEventListener('click', () => showBugDetail(bug));
+                
+                bugTableBody.appendChild(row);
+            });
+        }
+        
+        // 更新统计信息
+        function updateStats() {
+            const fixedCount = fixedBugs.length;
+            const pendingCount = pendingBugs.length;
+            const totalCount = fixedCount + pendingCount;
+            const fixRate = totalCount > 0 ? Math.round((fixedCount / totalCount) * 100) : 0;
+            
+            document.getElementById('fixedCount').textContent = fixedCount;
+            document.getElementById('pendingCount').textContent = pendingCount;
+            document.getElementById('totalCount').textContent = totalCount;
+            document.getElementById('fixRate').textContent = `${fixRate}%`;
+        }
+        
+        // 显示Bug详情
+        function showBugDetail(bug) {
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+            const bugModal = document.getElementById('bugModal');
+            
+            modalTitle.textContent = `Bug ${bug.id}: ${bug.title}`;
+            modalBody.innerHTML = `
+                <div style="margin-bottom: 15px;">
+                    <strong>描述:</strong> ${bug.description}
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <strong>状态:</strong> <span class="status-badge status-${bug.status}">${bug.status === 'fixed' ? '已修复' : '待修复'}</span>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <strong>优先级:</strong> ${bug.priority === 'high' ? '高' : bug.priority === 'medium' ? '中' : '低'}
+                </div>
+                ${bug.fixReason ? `
+                <div style="margin-bottom: 15px;">
+                    <strong>修复原因:</strong> ${bug.fixReason}
+                </div>
+                ` : ''}
+            `;
+            
+            bugModal.classList.add('active');
+        }
+        
+        // 关闭模态框
+        function closeModal() {
+            const bugModal = document.getElementById('bugModal');
+            bugModal.classList.remove('active');
+        }
+        
+        // 处理添加Bug表单提交
+        document.getElementById('addBugForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('bugTitle').value;
+            const description = document.getElementById('bugDescription').value;
+            const priority = document.getElementById('bugPriority').value;
+            
+            const newBug = {
+                id: fixedBugs.length + pendingBugs.length + 1,
+                title,
+                description,
+                status: 'pending',
+                priority,
+                fixReason: ''
+            };
+            
+            pendingBugs.push(newBug);
+            renderBugList();
+            updateStats();
+            
+            // 重置表单
+            this.reset();
+        });
+        
+        // 初始化页面
+        initPage();
+    </script>
+</body>
+</html>
